@@ -7,6 +7,7 @@ import toast, { useToaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { baseURL } from "../varibles.jsx";
+import { TbLoader2 } from "react-icons/tb";
 
 const LoginForm = () => {
   let [loading, setLoading] = useState(false);

@@ -6,6 +6,7 @@ import axios from "axios";
 import toast, { useToaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { baseURL } from "../varibles.jsx";
+import { TbLoader2 } from "react-icons/tb";
 
 const RegisterForm = () => {
   // State to handle form inputs
