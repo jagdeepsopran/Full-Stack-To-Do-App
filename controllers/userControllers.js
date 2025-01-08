@@ -3,6 +3,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import crypto from "crypto";
 import nodemailer from "nodemailer";
+import { log } from "console";
 
 export async function registerController(req, res) {
   try {
@@ -106,7 +107,8 @@ export async function logoutController(req, res) {
 export async function requestPasswordResetController(req, res) {
   try {
     const { email } = req.body;
-
+    console.log(email);
+    
     const user = await User.findOne({ email });
 
     if (!user) {
