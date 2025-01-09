@@ -18,26 +18,26 @@ const UpdateTodo = () => {
   });
 
   // Fetch single todo item
-  // async function todoOne() {
-  //   try {
-  //     const response = await axios.get(`${baseURL}/api/todo/getOne/${id}`, {
-  //       withCredentials: "include",
-  //     });
-  //     const fetchedData = response.data.TodoOne;
-  //     setTData(fetchedData);
-  //     setFormData({
-  //       title: fetchedData.title,
-  //       description: fetchedData.description,
-  //     });
-  //   } catch (error) {
-  //     console.error(error);
-  //     toast.error("Failed to fetch the Todo item.");
-  //   }
-  // }
+  async function todoOne() {
+    try {
+      const response = await axios.get(`${baseURL}/api/todo/getOne/${id}`, {
+        withCredentials: "include",
+      });
+      const fetchedData = response.data.TodoOne;
+      setTData(fetchedData);
+      setFormData({
+        title: fetchedData.title,
+        description: fetchedData.description,
+      });
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to fetch the Todo item.");
+    }
+  }
 
-  // useEffect(() => {
-  //   todoOne();
-  // }, [id]);
+  useEffect(() => {
+    todoOne();
+  }, [id]);
 
   // Handle input changes
   const handleChange = (e) => {

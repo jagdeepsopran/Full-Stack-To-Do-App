@@ -14,6 +14,8 @@ import ProtectedRoute from "./utils/ProtectedRoute";
 import ResetPassword from "./auth/ResetPassword";
 import RequestPasswordReset from "./auth/RequestPasswordReset";
 
+import './App.css';
+
 const App = () => {
   return (
     <BrowserRouter>

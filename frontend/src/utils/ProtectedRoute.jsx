@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import { verifyToken } from "./Auth";
+import Loader from "../Loader";
 
 const ProtectedRoute = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
@@ -15,7 +16,7 @@ const ProtectedRoute = ({ children }) => {
 
   // Show a loading state while verifying the token
   if (isAuthenticated === null) {
-    return <p>Loading...</p>;
+    return <Loader/>;
   }
 
   // Redirect to login if not authenticated

@@ -92,9 +92,9 @@ export async function deleteTodoController(req, res) {
 export async function getOneTodoController(req, res) {
   try {
     const todoId = req.params.id;
-    const Todo = await Todo.find({ _id: todoId });
+    const TodoOne = await Todo.find({ _id: todoId });
 
-    if (!Todo) {
+    if (!TodoOne) {
       return res.status(200).json({
         success: false,
         message: "Todo Not found",

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { verifyToken } from "./Auth";
 import { Navigate } from "react-router-dom";
+import Loader from "../Loader";
 
 const PublicRoute = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
@@ -15,7 +16,7 @@ const PublicRoute = ({ children }) => {
   }, []);
 
   if (isAuthenticated === null) {
-    return <p>Loading...</p>;
+    return <Loader/>;
   }
 
   return isAuthenticated ? <Navigate to="/dashboard" replace /> : children;
